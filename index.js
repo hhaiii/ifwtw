@@ -44,7 +44,7 @@ cl.on('stanza',function(stanza) {
 	
 		 stanza.attrs.to = stanza.attrs.from;
 		 delete stanza.attrs.from;
-		 and send back.
+		 //and send back.
 		 cl.send(stanza);
 
 
