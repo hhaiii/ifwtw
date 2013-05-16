@@ -84,8 +84,8 @@ function keepAlive() {
 			   c.send(new xmpp.Element('message',
 						   { to: username,
 						     from: c.jid,
-						     type: 'chat'}).
-				  c('body').
+						     type: 'chat'}),
+				  c('body'),
 				  t('keepAlive'));
 		       });
 
