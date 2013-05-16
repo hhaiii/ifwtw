@@ -1,5 +1,5 @@
 {
-  "name": "ifttw",
+  "name": "ifwtw",
   "version": "0.0.1",
   "description": "ifttt to generic webservice bridge",
   "main": "index.js",

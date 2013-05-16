@@ -7,6 +7,9 @@ var argv = process.argv;
 
 var config = require('./config');
 
+if (process.env.USERNAME) {config.username = process.env.USERNAME};
+if (process.env.PASSWORD) {config.password = process.env.PASSWORD};
+
 var cl = new xmpp.Client({ jid: config.username,
 			   password: config.password });
 cl.on('online',
