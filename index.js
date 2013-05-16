@@ -79,4 +79,11 @@ function(e) {
 	sys.puts(e);
 });
 
+function test()
+{
+   console.trace();
+   setTimeout(test, 10000);
+}
+
+test();
 
