@@ -30,10 +30,12 @@ cl.on('stanza',function(stanza) {
 	stanza.attrs.type !== 'error') {
 
 	var body = stanza.getChild('body');
-	if (body && stanza.attrs.from == 'bot@ifttt.com' ) {
+	if (body) {
 		var message = body.getText();
 		http.get("http://api.electricimp.com/v1/679dcd70d05fc6f8/30ab3df52bbacf21?value=" + message, function(res) {
+			console.log(message);
 			console.log("Got response: " + res.statusCode);
+
 		}).on('error', function(e) {
 			console.log("Got error: " + e.message);
 		});
