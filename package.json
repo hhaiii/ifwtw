@@ -10,8 +10,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "git@github.com:amicojeko/ifwtw.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amicojeko/ifwtw.git"
+  },
   "author": "Jeko 2013",
   "license": "BSD",
-  "gitHead": "d871deffdf819762f72821edef710f0aaa0dc863"
+  "gitHead": "d871deffdf819762f72821edef710f0aaa0dc863",
+  "readmeFilename": "README.md"
 }
