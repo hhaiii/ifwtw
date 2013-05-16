@@ -59,3 +59,9 @@ cl.on('error',
 function(e) {
 	sys.puts(e);
 });
+
+
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
