@@ -41,10 +41,12 @@ cl.on('stanza',function(stanza) {
 		//});
 	}
 	// Swap addresses...
-	
+		
 		 stanza.attrs.to = stanza.attrs.from;
 		 delete stanza.attrs.from;
 		 //and send back.
+	if (body) 
+		 console.log("message!");
 		 cl.send(stanza);
 
 
