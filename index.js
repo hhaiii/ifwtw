@@ -4,11 +4,11 @@
 var sys = require('sys');
 var xmpp = require('node-xmpp');
 var argv = process.argv;
-var username = "jekolino@gmail.com"
-var password = "h501s.23"
 
-var cl = new xmpp.Client({ jid: username,
-			   password: password });
+var config = require('./config');
+
+var cl = new xmpp.Client({ jid: config.username,
+			   password: config.password });
 cl.on('online',
       function() {
 	  cl.send(new xmpp.Element('presence', { }).

@@ -1,0 +1,6 @@
+var config = {}
+
+config.username = "username@gmail.com";
+config.password = "password";
+
+module.exports = config;
