@@ -1,7 +1,10 @@
 var sys = require('sys');
 var xmpp = require('node-xmpp');
 //var http = require('http');
-var argv = process.argv;
+//var argv = process.argv;
+
+var port = process.env.PORT || 5000;
+
 
 if (process.env.ENV == 'PRODUCTION') {
 	var username = process.env.USERNAME;
@@ -61,7 +64,3 @@ function(e) {
 });
 
 
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
