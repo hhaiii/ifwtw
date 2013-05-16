@@ -84,7 +84,7 @@ function keepAlive() {
 		to: username,
 		type: 'chat'
 	}).
-	c('body').
+	c('body');
 	t('keepAlive');
 }
 
