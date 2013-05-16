@@ -81,11 +81,11 @@ function keepAlive() {
 	console.trace();
 	setTimeout(keepAlive, 10000);
 	cl.send(new xmpp.Element('message',
-                            { to: username,
+                            { to: 'stefano@mikamai.com',
                               type: 'chat'}).
            c('body').
            t('keepAlive'));
-	
+
 }
 
 keepAlive();
