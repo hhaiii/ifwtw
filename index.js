@@ -5,13 +5,18 @@ var sys = require('sys');
 var xmpp = require('node-xmpp');
 var argv = process.argv;
 
-var config = require('./config');
+if (process.env.ENV == 'PRODUCTION'){
+	var username = process.env.USERNAME;
+	var password = process.env.PASSWORD;
+}else{
+	var config = require('./config');	
+	var username = process.env.USERNAME;
+	var password = process.env.PASSWORD;
+}
 
-if (process.env.USERNAME) {config.username = process.env.USERNAME};
-if (process.env.PASSWORD) {config.password = process.env.PASSWORD};
+var cl = new xmpp.Client({ jid: username,
+			   password: password });
 
-var cl = new xmpp.Client({ jid: config.username,
-			   password: config.password });
 cl.on('online',
       function() {
 	  cl.send(new xmpp.Element('presence', { }).
