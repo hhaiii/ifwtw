@@ -83,10 +83,8 @@ function keepAlive() {
 	function(to) {
 			   c.send(new xmpp.Element('message',
 						   { to: username,
-						     from: c.jid,
-						     type: 'chat'}),
-				  c('body'),
-				  t('keepAlive'));
+						     from: username,
+						     type: 'chat'});//.c('body').t('keepAlive'));
 		       });
 
 		   // nodejs has nothing left to do and will exit
