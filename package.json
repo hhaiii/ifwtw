@@ -1,21 +1,11 @@
 {
-  "name": "ifwtw",
+  "name": "node-example",
   "version": "0.0.1",
-  "description": "ifttt to generic webservice bridge",
-  "main": "index.js",
   "dependencies": {
-    "node-xmpp": "~0.3.2"
+    "express": "3.1.x"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:amicojeko/ifwtw.git"
-  },
-  "author": "Jeko 2013",
-  "license": "BSD",
-  "gitHead": "d871deffdf819762f72821edef710f0aaa0dc863",
-  "readmeFilename": "README.md"
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
 }
