@@ -4,7 +4,8 @@
   "description": "ifttt to generic webservice bridge",
   "main": "index.js",
   "dependencies": {
-    "node-xmpp": "~0.3.2"
+    "node-xmpp": "~0.3.2",
+    "express": "3.1.x"
   },
   "devDependencies": {},
   "scripts": {
