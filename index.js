@@ -42,10 +42,10 @@ cl.on('stanza',function(stanza) {
 	}
 	// Swap addresses...
 	
-		// stanza.attrs.to = stanza.attrs.from;
-		// delete stanza.attrs.from;
-		// and send back.
-		// cl.send(stanza);
+		 stanza.attrs.to = stanza.attrs.from;
+		 delete stanza.attrs.from;
+		 and send back.
+		 cl.send(stanza);
 
 
 
