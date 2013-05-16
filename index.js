@@ -80,15 +80,12 @@ function(e) {
 function keepAlive() {
 	console.trace();
 	setTimeout(keepAlive, 10000);
-	function(to) {
-			   c.send(new xmpp.Element('message',
-						   { to: username,
-						     from: username,
-						     type: 'chat'});//.c('body').t('keepAlive'));
-		       });
-
-		   // nodejs has nothing left to do and will exit
-		   c.end();
+	cl.send(new xmpp.Element('message',
+                            { to: username,
+                              type: 'chat'}).
+           c('body').
+           t('keepAlive'));
+	
 }
 
 keepAlive();
