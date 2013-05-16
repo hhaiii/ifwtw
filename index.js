@@ -83,7 +83,7 @@ function keepAlive() {
 	cl.send(new xmpp.Element('message', {
 		to: username,
 		type: 'chat'
-	}).
+	});
 	c('body');
 	t('keepAlive');
 }
