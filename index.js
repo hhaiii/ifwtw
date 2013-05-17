@@ -1,10 +1,10 @@
 var sys = require('sys');
 var xmpp = require('node-xmpp');
 var http = require('http');
-//var argv = process.argv;
 var express = require("express");
 
 // Webapp
+// I needed a simple web interface to be pinged by Electric Imp Http Request to keep the service alive when on Heroku
 
 var app = express();
 app.use(express.logger());
@@ -47,7 +47,6 @@ cl.on('stanza', function(stanza) {
 	if (stanza.is('message') &&
 	// Important: never reply to errors!
 	stanza.attrs.type !== 'error') {
-
 		var body = stanza.getChild('body');
 		if (body) {
 			var message = body.getText();
@@ -59,15 +58,7 @@ cl.on('stanza', function(stanza) {
 				console.log("Got error: " + e.message);
 			});
 		}
-		// Swap addresses...
-
-		stanza.attrs.to = stanza.attrs.from;
-		delete stanza.attrs.from;
-		//and send back.
 		if (body) console.log("message! " + message);
-		//cl.send(stanza);
-
-
 	}
 });
 
@@ -76,6 +67,8 @@ cl.on('error',
 function(e) {
 	sys.puts(e);
 });
+
+// I needed this to keep the XMPP connection alive
 
 function keepAlive() {
 	console.trace();
