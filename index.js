@@ -53,6 +53,11 @@ cl.on('stanza', function(stanza) {
 			http.get("http://api.electricimp.com/v1/679dcd70d05fc6f8/306c243553ccdbad?value=" + message, function(res) {
 				console.log(message);
 				console.log("Got response: " + res.statusCode);
+				cl.send(new xmpp.Element('message',
+                            { to: stanza.attrs.from,
+                              type: 'chat'}).
+			           c('body').
+			           t('ok'));
 
 			}).on('error', function(e) {
 				console.log("Got error: " + e.message);
@@ -71,10 +76,10 @@ function(e) {
 // I needed this to keep the XMPP connection alive
 
 function keepAlive() {
-	console.trace();
+	console.log('XMPP keepAlive');
 	setTimeout(keepAlive, 10000);
 	cl.send(new xmpp.Element('message',
-                            { to: 'jekolino@gmail.com',
+                            { to: username,
                               type: 'chat'}).
            c('body').
            t('keepAlive'));
