@@ -77,7 +77,7 @@ function(e) {
 
 function keepAlive() {
 	console.log('XMPP keepAlive');
-	setTimeout(keepAlive, 10000);
+	setTimeout(keepAlive, 60000);
 	cl.send(new xmpp.Element('message',
                             { to: username,
                               type: 'chat'}).
