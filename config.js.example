@@ -2,5 +2,6 @@ var config = {}
 
 config.username = "username@gmail.com";
 config.password = "password";
+config.ws = "http://api.electricimp.com/v1/addresswithoutvalueparam"
 
 module.exports = config;

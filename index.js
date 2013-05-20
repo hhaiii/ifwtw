@@ -23,11 +23,13 @@ app.listen(port, function() {
 if (process.env.ENV == 'PRODUCTION') {
 	var username = process.env.USERNAME;
 	var password = process.env.PASSWORD;
+	var webservice = process.env.WS;
 
 } else {
 	var config = require('./config');
 	var username = config.username;
 	var password = config.password;
+	var webservice = config.ws;
 }
 
 // Client XMPP
@@ -50,7 +52,7 @@ cl.on('stanza', function(stanza) {
 		var body = stanza.getChild('body');
 		if (body) {
 			var message = body.getText();
-			http.get("http://api.electricimp.com/v1/679dcd70d05fc6f8/306c243553ccdbad?value=" + message, function(res) {
+			http.get(webservice + "?value=" + message, function(res) {
 				console.log(message);
 				console.log("Got response: " + res.statusCode);
 				cl.send(new xmpp.Element('message',
