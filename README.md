@@ -12,7 +12,7 @@ The Node.js application - called IFWTW (If Whatever Than Whatever) - is on my gi
 
 You can freely fork the source code, configure it, make it run locally and eventually deploy it on heroku in less than 10 minutes.
 
-Sadly, I discovered that the IFTTT GTalk support is very poor, and it's very far from being real time. So the application can be configured to check your email and use the email channel instead. I hope that IFTTT will have a better support for GTalk in the future, so I can get rid of this feature.
+Sadly, I discovered that the IFTTT GTalk support is very poor, and it's very far from being real time. So the application can be configured to check your email and use the email channel instead. I hope that IFTTT will have a better support for GTalk in the future.
 
 Last thing. Since my application listens for an XMPP message, and it works pretty well, you can use it to communicate with your Electric Imp via Jabber/GTalk, even if you don't use IFTTT
 
