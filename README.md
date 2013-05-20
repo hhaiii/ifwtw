@@ -31,10 +31,10 @@ If you want to run this on heroku, configure the Heroku enviroinment then set th
 
 `heroku config:set ENV=PRODUCTION`
 
-`heroku config:set USERNAME=username`
+`heroku config:set USERNAME=GTalk username (example@gmail.com)`
 
-`heroku config:set PASSWORD=yourpass`
+`heroku config:set PASSWORD=GTalk password`
 
-`heroku config:set WS=electric imp webservice address`
+`heroku config:set WS=http://electric imp webservice address`
 
 (http:// not https://) without the "?value=" part, because it will be appended automatically
